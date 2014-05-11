@@ -4,12 +4,12 @@ b<- subset(a,a$Date == "1/2/2007"|a$Date == "2/2/2007")
 
 b$datetime <-strptime(paste(b$Date,b$Time),"%d/%m/%Y %H:%M:%S")
 
-png(file="plot4.png",width=480,height=480)
+png(file="plot4.png",width=480,height=480, bg = "transparent")
 
 par(mfrow=c(2,2))
 
 with(b,plot(b$datetime,as.numeric(as.character(b$Global_active_power)),xlab = ""
-            ,ylab = "Global Active Power (kilowatts)",type = "l"))
+            ,ylab = "Global Active Power",type = "l"))
 
 with(b,plot(b$datetime,as.numeric(as.character(b$Voltage)),xlab = "datetime"
             ,ylab = "Voltage",type = "l"))
